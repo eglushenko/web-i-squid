@@ -1,35 +1,21 @@
 package com.github.webisquid;
 
-import org.springframework.boot.web.servlet.server.Jsp;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-@EnableWebMvc
-@ComponentScan(basePackages = "com.github.webisquid.controllers")
 public class WebConfig implements WebMvcConfigurer {
+
+    @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/wizard");
-        registry.addViewController("/index");
-        registry.addViewController("/login");
+        registry.addViewController("/")
+                .setViewName("forward:/login.xhtml");
+        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
 
+        registry.addViewController("/index")
+                .setViewName("forward:/index.xhtml");
+        registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
-    @Bean
-    public ViewResolver viewResolver(){
-        InternalResourceViewResolver bean = new InternalResourceViewResolver();
-
-        bean.setViewClass(JstlView.class);
-        bean.setPrefix("/WEB-INF/view/");
-        bean.setSuffix(".xhtml");
-        return bean;
-    }
-
-
 }

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <h:form>
+        <p:growl>
+            <p:autoUpdate />
+        </p:growl>
+
+        <p:panelMenu style="width:400px">
+            <p:submenu label="MENU" >
+
+                <p:menuitem value="Home" url="/" icon="pi pi-home" />
+                <p:menuitem value="Status" url="/status" icon="pi pi-file" />
+
+            </p:submenu>
+        </p:panelMenu>
+    </h:form>
+
+</h:head>
+<p:separator />
+
+<style type="text/css">
+    .value {
+        font-weight: bold;
+    }
+</style>
+<body>
+<h:form id="form" >
+    <p:growl id="getStatusId" showDetail="true" />
+
+    <h:panelGrid columns="2" cellpadding="5" style="display:block; text-align:center"  >
+        <p:outputLabel for="float-input" value="Number of bus" />
+        <p:inputText id="float-input" value="#{formController.ticket.id}" />
+
+
+    </h:panelGrid>
+
+    <p:commandButton value="Submit" update="getStatusId" action="#{formController.getTicketStatus}" icon="pi pi-check" />
+
+    <p:dialog modal="true" resizable="false" header="Information" widgetVar="dlg" showEffect="fold">
+        <p:panelGrid id="display" columns="2" columnClasses="label,value">
+            <h:outputText value="Status"/>
+            <h:outputText value="#{formController.statusTicket}"/>
+
+        </p:panelGrid>
+        <br/>
+
+
+</p:dialog>
+</h:form>
+</body>
+</html>

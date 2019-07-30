@@ -7,139 +7,135 @@
     <groupId>com.github.web-i-squid</groupId>
     <artifactId>web-i-squid</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.6.RELEASE</version>
+    </parent>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>6</source>
-                    <target>6</target>
-                </configuration>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
-    <packaging>war</packaging>
-
-    <properties>
-        <failOnMissingWebXml>false</failOnMissingWebXml>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <skip.it>false</skip.it>
-    </properties>
+    <repositories>
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>http://repository.primefaces.org</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
     <dependencies>
 
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-webmvc</artifactId>
-        <version>5.1.7.RELEASE</version>
-    </dependency>
 
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-web</artifactId>
-        <version>5.1.7.RELEASE</version>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.1.6.RELEASE</version>
+        </dependency>
 
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-        <version>2.1.5.RELEASE</version>
-    </dependency>
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.faces</artifactId>
+            <version>2.3.5</version>
+        </dependency>
 
-    <dependency>
-        <groupId>org.hibernate</groupId>
-        <artifactId>hibernate-validator</artifactId>
-        <version>6.0.14.Final</version>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-    <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>jstl</artifactId>
-        <version>1.2</version>
-    </dependency>
-    <!-- Need this to compile JSP -->
-    <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-jasper</artifactId>
-        <version>9.0.20</version>
-    </dependency>
-
-    <dependency>
-        <groupId>org.springframework.data</groupId>
-        <artifactId>spring-data-jpa</artifactId>
-        <version>2.1.8.RELEASE</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.15</version>
-    </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>2.1.6.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.1.6.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
             <artifactId>hibernate-jpa-2.1-api</artifactId>
             <version>1.0.2.Final</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.4.2.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <scope>test</scope>
-            <version>5.1.7.RELEASE</version>
-        </dependency>
-
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>2.9.2</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-catalina</artifactId>
-            <version>9.0.20</version>
-        </dependency>
-        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.9.2</version>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-            <version>2.1.5.RELEASE</version>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.46</version>
         </dependency>
 
         <dependency>
-            <groupId>javax.faces</groupId>
-            <artifactId>jsf-api</artifactId>
-            <version>2.1</version>
-            <scope>provided</scope>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>2.0.SP1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.3.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.4.3.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.17.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-impl -->
-        <dependency>
-            <groupId>com.sun.faces</groupId>
-            <artifactId>jsf-impl</artifactId>
-            <version>2.2.19</version>
-        </dependency>
 
 
     </dependencies>
+
 
 
 
