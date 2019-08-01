@@ -15,8 +15,11 @@ html {
     width: 100%;
 }
 .text-header{
+    position: absolute;
+    left: 90px;
+    top: 5px;
     font-family: fantasy;
-    font-size: 20px;
+    font-size: 50px;
     color: white;
 }
 #content {
@@ -40,6 +43,8 @@ html {
     position: absolute;
     bottom: 0;
     width: 100%;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .button {
     background-color: #4CAF50;
@@ -51,4 +56,15 @@ html {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+.login{
+    align-content: center;
+    text-align: center;
+
+}
+.settings-icon{
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    font-family: FontAwesome;
 }

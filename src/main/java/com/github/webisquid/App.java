@@ -1,5 +1,6 @@
 package com.github.webisquid;
 
+import com.github.webisquid.repo.UserRepo;
 import org.springframework.beans.factory.config.CustomScopeConfigurer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -47,4 +48,5 @@ public class App implements ServletContextAware {
         servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
         servletContext.setInitParameter("javax.faces.FACELETS_SKIP_COMMENTS", "true");
     }
+
 }
