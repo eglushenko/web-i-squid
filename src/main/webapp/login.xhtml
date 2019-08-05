@@ -16,21 +16,23 @@
         </ui:define>
     <ui:define name="content">
         <div id="loginform">
-    <h:form>
+    <h:form prependId="false">
         <h3>Login</h3>
         <br>
             <p:separator />
         </br>
         <div class="login">
-        <h:outputText value="Username " />
-        <h:inputText id="username"></h:inputText>
-        <br></br><br></br>
+            <p:inputText id="username" styleClass="form-control"
+                         placeholder="Username">
+                <p:focus/>
+            </p:inputText>
+            <i class="fa fa-envelope form-control-feedback"></i>
+        </div>
+        <div class="form-group has-feedback">
+            <p:password id="password" styleClass="form-control"
+                        placeholder="Password" feedback="true"/>
 
-        <h:outputText value="Password " />
-        <h:inputSecret id="password" ></h:inputSecret>
-        <br></br><br></br>
-
-        <h:commandButton class="button" value="Login" ></h:commandButton>
+        <h:commandButton class="button" value="Login" ajax="false" ></h:commandButton>
         </div>
     </h:form>
         </div>

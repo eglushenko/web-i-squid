@@ -44,7 +44,6 @@ public class App implements ServletContextAware {
 
     @Override
     public void setServletContext(ServletContext servletContext) {
-        // http://stackoverflow.com/a/25509937/1199132
         servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
         servletContext.setInitParameter("javax.faces.FACELETS_SKIP_COMMENTS", "true");
     }
