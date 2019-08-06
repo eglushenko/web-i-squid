@@ -6,37 +6,56 @@
       xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
     <title>login</title>
+
 </h:head>
 
 <h:body>
-    <div id="page">
+
     <ui:composition template="/templ/common/commonLayout.xhtml">
         <ui:define name="header">
-            <img src="/resources/img/squid_logo.png" alt="squid_logo"/>
-        </ui:define>
-    <ui:define name="content">
-        <div id="loginform">
-    <h:form prependId="false">
-        <h3>Login</h3>
-        <br>
-            <p:separator />
-        </br>
-        <div class="login">
-            <p:inputText id="username" styleClass="form-control"
-                         placeholder="Username">
-                <p:focus/>
-            </p:inputText>
-            <i class="fa fa-envelope form-control-feedback"></i>
-        </div>
-        <div class="form-group has-feedback">
-            <p:password id="password" styleClass="form-control"
-                        placeholder="Password" feedback="true"/>
+           <!--TODO-->
+            <div class="card-header">
+                <img  src="/resources/img/squid_logo.png"  alt="squid_logo"/>
+            </div>
 
-        <h:commandButton class="button" value="Login" ajax="false" ></h:commandButton>
+        </ui:define>
+
+    <ui:define name="content">
+        <div id="cover">
+            <div id="cover-caption">
+                <div id="container" class="container">
+                    <div class="row text-black-50">
+                        <div class="col-sm-6 offset-sm-3 text-center">
+                            <h1 class="display-3">LOGIN</h1>
+                            <div class="info-form">
+                                <h:form prependId="false" class="form-inlin justify-content-center">
+                                    <div class="form-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <label class="sr-only">Name</label>
+                                        <p:inputText id="username" styleClass="form-control"
+                                                     placeholder="Username" class="form-control"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <p:password id="password" styleClass="form-control"
+                                                    placeholder="Password" feedback="true" class="form-control" />
+                                    </div>
+                                    <h:commandButton value="Login" ajax="false" class="btn btn-success "/>
+                                </h:form>
+                            </div>
+                            <a href="#info" class="btn btn-outline-secondary btn-sm" >
+                                Info
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </h:form>
-        </div>
+
+
+    </ui:define>
+    <ui:define name="footer">
+
     </ui:define>
     </ui:composition>
-    </div>
-</h:body></html>
+</h:body>
+</html>

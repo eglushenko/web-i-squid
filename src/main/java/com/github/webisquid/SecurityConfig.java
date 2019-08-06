@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // form login
-        http.authorizeRequests().antMatchers("/", "/login.xhtml", "/javax.faces.resource/**").permitAll().anyRequest()
+        http.authorizeRequests().antMatchers("/", "/login.xhtml", "/javax.faces.resource/**","/resources/**").permitAll().anyRequest()
                 .fullyAuthenticated().and().formLogin().loginPage("/login.xhtml").defaultSuccessUrl("/index.xhtml")
                 .failureUrl("/login.xhtml?authfailed=true").permitAll().and().logout().logoutSuccessUrl("/login.xhtml")
                 .logoutUrl("/j_spring_security_logout").and().csrf().disable();
