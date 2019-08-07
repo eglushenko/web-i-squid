@@ -14,8 +14,8 @@
     <ui:composition template="/templ/common/commonLayout.xhtml">
         <ui:define name="header">
            <!--TODO-->
-            <div class="card-header">
-                <img  src="/resources/img/squid_logo.png"  alt="squid_logo"/>
+            <div class="card-header bg-dark" style="height: 80px">
+                <img  src="/resources/img/squid_logo.png" style="position: absolute; align-self: flex-start"  alt="squid_logo"/>
             </div>
 
         </ui:define>
@@ -24,14 +24,14 @@
         <div id="cover">
             <div id="cover-caption">
                 <div id="container" class="container">
+                      <br/>
                     <div class="row text-black-50">
-                        <div class="col-sm-6 offset-sm-3 text-center">
+                        <div class="shadow-lg rounded col-sm-5 offset-sm-3 px-md-5 text-center">
                             <h1 class="display-3">LOGIN</h1>
-                            <div class="info-form">
+                            <div class="info-form" >
                                 <h:form prependId="false" class="form-inlin justify-content-center">
                                     <div class="form-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <label class="sr-only">Name</label>
+                                        <label class="sr-only" >Name</label>
                                         <p:inputText id="username" styleClass="form-control"
                                                      placeholder="Username" class="form-control"/>
                                     </div>
@@ -39,12 +39,12 @@
                                         <p:password id="password" styleClass="form-control"
                                                     placeholder="Password" feedback="true" class="form-control" />
                                     </div>
-                                    <h:commandButton value="Login" ajax="false" class="btn btn-success "/>
+                                    <h:commandButton value="Login" ajax="false" class="btn btn-success " >
+                                    </h:commandButton>
                                 </h:form>
+                                <br/>
+
                             </div>
-                            <a href="#info" class="btn btn-outline-secondary btn-sm" >
-                                Info
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,6 @@
 
     </ui:define>
     <ui:define name="footer">
-
     </ui:define>
     </ui:composition>
 </h:body>

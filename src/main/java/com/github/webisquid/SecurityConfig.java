@@ -5,8 +5,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.web.cors.CorsUtils;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -32,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         // form login
-        http.authorizeRequests().antMatchers("/", "/login.xhtml", "/javax.faces.resource/**","/resources/**").permitAll().anyRequest()
+        http.authorizeRequests().antMatchers("/", "/login.xhtml", "/javax.faces.resource/**","/resources/**","/fontawesome*").permitAll().anyRequest()
                 .fullyAuthenticated().and().formLogin().loginPage("/login.xhtml").defaultSuccessUrl("/index.xhtml")
                 .failureUrl("/login.xhtml?authfailed=true").permitAll().and().logout().logoutSuccessUrl("/login.xhtml")
                 .logoutUrl("/j_spring_security_logout").and().csrf().disable();
@@ -40,5 +42,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // allow to use ressource links like pdf
         http.headers().frameOptions().sameOrigin();
     }
+
 
 }
