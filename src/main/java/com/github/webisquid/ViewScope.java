@@ -3,8 +3,9 @@ package com.github.webisquid;
 import org.springframework.beans.factory.ObjectFactory;
 import javax.faces.context.FacesContext;
 import java.util.Map;
+import org.springframework.beans.factory.config.Scope;
 
-public class ViewScope implements org.springframework.beans.factory.config.Scope {
+public class ViewScope implements Scope {
 
 
     @Override
