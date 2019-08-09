@@ -46,7 +46,7 @@ public class App implements ServletContextAware {
     public void setServletContext(ServletContext servletContext) {
         servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
         servletContext.setInitParameter("javax.faces.FACELETS_SKIP_COMMENTS", "true");
-//        servletContext.setInitParameter("jsf.primefaces.FONT_AWESOME","true");
+        servletContext.setInitParameter("primefaces.FONT_AWESOME","true");
     }
 
 }

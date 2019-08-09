@@ -1,20 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
->
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
 <body >
 <ui:composition>
-    <div class="navbar navbar-dark bg-dark">
+
+        <div class="navbar navbar-dark bg-dark">
         <!-- Navbar content -->
         <a class="navbar-brand" href="#">
             <img src="/resources/img/squid_logo.png" width="30" height="30" class="d-inline-block align-top" alt=""/>
             SQUID GUI
         </a>
-    </div>
+<!--TODO-->
+            <ul class="nav navbar-nav">
+            <li class="Account">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" > Profile<span class="-caret-down"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">logout</a></li>
+                </ul>
+            </li>
+             </ul>
+        </div>
+
 </ui:composition>
 </body>
 </html>
