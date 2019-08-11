@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
@@ -8,22 +8,32 @@
 <body >
 <ui:composition>
 
-        <div class="navbar navbar-dark bg-dark">
+
+        <nav class="navbar navbar-dark bg-dark navbar-fixed-top">
+            <div class="container-fluid">
         <!-- Navbar content -->
         <a class="navbar-brand" href="#">
             <img src="/resources/img/squid_logo.png" width="30" height="30" class="d-inline-block align-top" alt=""/>
             SQUID GUI
         </a>
-<!--TODO-->
-            <ul class="nav navbar-nav">
-            <li class="Account">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" > Profile<span class="-caret-down"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">logout</a></li>
-                </ul>
-            </li>
-             </ul>
-        </div>
+      <div class="nav navbar navbar-right">
+
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle"/>
+                    Profile
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                    <button class="dropdown-item" type="button">Action</button>
+                    <button class="dropdown-item" type="button">Another action</button>
+                    <button class="dropdown-item" type="button" ><a href="/j_spring_security_logout" ><i class="fa fa-arrow-circle-right"/> Logout</a></button>
+                </div>
+            </div>
+
+      </div>
+            </div>
+    </nav>
 
 </ui:composition>
 </body>

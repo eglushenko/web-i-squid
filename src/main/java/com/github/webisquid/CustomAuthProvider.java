@@ -20,7 +20,7 @@ public class CustomAuthProvider implements AuthenticationProvider {
         String user = authentication.getName();
         String password = authentication.getCredentials().toString();
 
-        // Here you can add a database connection for your custom login
+//TODO
 
         List<GrantedAuthority> grantedAuths = new ArrayList<>();
 

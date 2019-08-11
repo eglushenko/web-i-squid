@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
@@ -11,9 +11,11 @@
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <h:outputStylesheet library="css" name="bootstrap.min.css" />
+    <h:outputStylesheet library="css" name="style.css"/>
 </h:head>
 
-<h:body>
+<h:body >
+    <div class="wrapper">
 
         <div id="header">
             <ui:insert name="header" >
@@ -21,18 +23,20 @@
             </ui:insert>
         </div>
 
-        <div id="content">
-            <ui:insert name="content" >
-                <ui:include src="/templ/common/commonContent.xhtml" />
-            </ui:insert>
-        </div>
 
-        <div id="footer">
+            <div id="content">
+                <ui:insert name="content" >
+                    <ui:include src="/templ/common/commonContent.xhtml" />
+                </ui:insert>
+            </div>
+
+
+        <div id="footer" class="card-footer">
             <ui:insert name="footer" >
                 <ui:include src="/templ/common/commonFooter.xhtml" />
             </ui:insert>
         </div>
-
+    </div>
 
 
 </h:body>
