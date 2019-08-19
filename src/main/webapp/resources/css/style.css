@@ -1,9 +1,19 @@
+body {
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
 
 #sidebar-wrapper{
     width: 250px;
     position: absolute;
     height: 100%;
-    background: #0b2e13;
+    background: #343a40;
     color: white;
     overflow-y: hidden;
     z-index: 1;
