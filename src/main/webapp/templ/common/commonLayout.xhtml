@@ -24,9 +24,13 @@
                 <ui:include src="/templ/common/commonHeader.xhtml" />
             </ui:insert>
         </div>
-
-
+            <div id="menu">
+                <ui:insert name="menu">
+                    <ui:include src="/templ/common/commonMenu.xhtml"/>
+                </ui:insert>
+            </div>
             <div id="content">
+
                 <ui:insert name="content" >
                     <ui:include src="/templ/common/commonContent.xhtml" />
                 </ui:insert>
