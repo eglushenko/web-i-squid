@@ -22,6 +22,7 @@ footer {
 #wrapper-content{
     position: absolute;
     padding-left: 250px;
+    width: auto;
     height: 100%;
 }
 .sidebar-nav{
@@ -35,9 +36,17 @@ footer {
 .sidebar-nav a{
     display: block;
     text-decoration: none;
+    color: white;
 }
 .sidebar-nav a:hover{
     background: white;
+    color: black;
+}
+.sidebar-nav a:active{
+    color: #adb5bd;
+}
+.sidebar-nav a:visited{
+    color: #adb5bd;
 }
 
 
@@ -108,4 +117,9 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
+}
+.user-info-role a{
+    color: #adb5bd;
+    display: block;
+    text-decoration: none;
 }
