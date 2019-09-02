@@ -8,17 +8,25 @@
 
 <h:head>
     <title>Dashboard</title>
+    <script type="text/javascript">
+        function update() {
+            $.get("index.xhtml", function(data) {
+                $("#auto-progress-bar").html(data);
+                window.setTimeout(update, 10000);
+            });
+        }
+    </script>
+
 </h:head>
 
 <h:body>
         <ui:composition template="/templ/common/commonLayout.xhtml">
             <ui:define name="content">
-
                 <div id="wrapper-content">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col">
-                                <!-- Progress bar 1 -->
+                            <div class="col" id="auto-progress-bar">
+                                <!-- CPU load -->
                                 <h2 class="h6 font-weight-bold text-center mb-4">CPU LOAD</h2>
                                 <div class="progress mx-auto" data-value="#{indexController.CPULoad}">
                                     <span class="progress-left">
@@ -34,32 +42,29 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                                 <div class="col">
-                                <!--Memory -->
-                                <h2 class="h6 font-weight-bold text-center mb-4">Memory Load</h2>
-                                <div class="progress mx-auto" data-value="#{indexController.CPULoad}">
-                                    <span class="progress-left">
-                                        <span class="progress-bar border-primary"></span>
-                                    </span>
-                                    <span class="progress-right">
+                                 <!--Memory -->
+                                    <h2 class="h6 font-weight-bold text-center mb-4">Memory Load</h2>
+                                     <div class="progress mx-auto" data-value="#{indexController.memory}">
+                                        <span class="progress-left">
+                                         <span class="progress-bar border-primary"></span>
+                                        </span>
+                                         <span class="progress-right">
                                             <span class="progress-bar border-primary"></span>
-                                    </span>
-                                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                        </span>
+                                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                                         <div class="h2 font-weight-bold">
-                                            <h:outputText value="#{indexController.CPULoad}"/>
-                                            <sup class="small">Mb</sup>
+                                            <h:outputText value="#{indexController.memory}"/>
+                                            <sup class="small">%</sup>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </ui:define>
-
-
-
             <ui:define name="footer"/>
         </ui:composition>
 
